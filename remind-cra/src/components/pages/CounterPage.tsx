@@ -1,8 +1,16 @@
+import useCounter from '../../hooks/useCounter';
+import Button from '../atoms/Button';
+
 const CounterPage = () => {
+  const { count, increaseCount, decreaseCount } = useCounter();
+
   return (
-    <div>
+    <>
       <h1>Counter Page</h1>
-    </div>
+      <h2>{count}</h2>
+      <Button onClick={increaseCount}>+</Button>
+      <Button onClick={decreaseCount}>-</Button>
+    </>
   );
 };
 
